@@ -2,8 +2,8 @@ FROM python:3
 
 RUN pip install Flask
 
-ADD hello.py /
-ENV FLASK_APP hello.py
+ADD app /app
+ENV FLASK_APP /app
 
 ENV FLASK_ENV development
 
