@@ -1,2 +1,10 @@
 
-name: fargen-reports-webui
+name: fargen-db-webui
+
+channels:
+    - conda-forge
+
+dependencies:
+    - flask=1.1.2
+
+
