@@ -5,6 +5,10 @@ RUN pip install Flask
 ADD app /app
 ENV FLASK_APP /app
 
+# FIXME: for testing, remove this.
+RUN mkdir /html_test
+ADD test/html/linkseq-main-hboc-all.html /html_test
+
 ENV FLASK_ENV development
 
 ENTRYPOINT ["python3"]
