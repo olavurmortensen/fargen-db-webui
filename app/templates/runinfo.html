@@ -1,0 +1,24 @@
+<!doctype html>
+<title>FarGen DB - Suquencing run info</title>
+
+<h1>FarGen DB - Sequencing run info</h1>
+
+<table>
+    <thead>
+        <th>Run ID</th>
+        <th>Samplesheet</th>
+        <th>Demux report</th>
+    </thead>
+    {% for run_id, fields in runinfo_dict.items() %}
+        <tr>
+            <td>{{ run_id }}</td>
+            <td>{{ fields.get('samplesheet') }}</td>
+            {% if fields.get('demux-report') is not None %}
+            <td><a href="{{ url_for('demux_report', run_id=run_id) }}">{{ fields.get('demux-report') }}</a></td>
+            {% else %}
+            <td>None</td>
+            {% endif %}
+        </tr>
+    {% endfor %}
+</table>
+
