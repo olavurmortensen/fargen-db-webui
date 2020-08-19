@@ -1,6 +1,7 @@
 FROM python:3
 
-RUN pip install Flask
+COPY requirements.txt /
+RUN pip install -r requirements.txt
 
 ADD app /app
 ENV FLASK_APP /app
