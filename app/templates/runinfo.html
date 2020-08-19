@@ -13,10 +13,10 @@
         <tr>
             <td>{{ run_id }}</td>
             <td>{{ fields.get('samplesheet') }}</td>
-            {% if fields.get('demux-report') is not None %}
-            <td><a href="{{ url_for('demux_report', run_id=run_id) }}">{{ fields.get('demux-report') }}</a></td>
+            {% if fields.get('demux-report') %}
+                <td><a href="{{ url_for('demux_report', run_id=run_id) }}">{{ fields.get('demux-report') }}</a></td>
             {% else %}
-            <td>None</td>
+                <td>None</td>
             {% endif %}
         </tr>
     {% endfor %}
